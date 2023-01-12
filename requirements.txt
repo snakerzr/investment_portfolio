@@ -3,4 +3,4 @@ numpy==1.23.5
 pandas==1.5.2
 pandas_datareader==0.10.0
 yfinance==0.2.3
-pypfopt==1.5.4
+PyPortfolioOpt==1.5.4
