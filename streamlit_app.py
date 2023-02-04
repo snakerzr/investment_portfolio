@@ -30,8 +30,8 @@ st.set_page_config(layout="wide")
 
 # default session variables initialization
 default_session_state_dict = {'disclaimer': False,
-                              'start_date': dt.date(2000,1,1),
-                              'end_date': dt.datetime.now().date(),
+                              # 'start_date': dt.date(2000,1,1),
+                              # 'end_date': dt.datetime.now().date(),
                               'selected_tickers_for_analytics': ['GOOG'],
                               'tickers_in_portfolio': [],
                               'risk_free_rate': 0.02,
@@ -94,9 +94,9 @@ tickers_selection = st.sidebar.multiselect('NASDAQ tickers in your portfolio',
 # start_date = st.sidebar.date_input('Start date', dt.date(2000,1,1), key = 'start_date')
 # end_date = st.sidebar.date_input('End date', dt.datetime.now().date(), key = 'end_date')
 
-start_date = st.sidebar.date_input('Start date', 
-                                   st.session_state['start_date'], 
-                                   key='start_date')
-end_date = st.sidebar.date_input('End date', 
-                                 st.session_state['end_date'], 
-                                 key='end_date')
+# start_date = st.sidebar.date_input('Start date', 
+#                                    st.session_state['start_date'], 
+#                                    key='start_date')
+# end_date = st.sidebar.date_input('End date', 
+#                                  st.session_state['end_date'], 
+#                                  key='end_date')

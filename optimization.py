@@ -6,6 +6,7 @@ from io import BytesIO # to overcome streamlit problem
 # # efficient frontier plotting but converting
 # # matplotlib fig to plotly
 
+import copy
 import time
 import datetime as dt
 
@@ -35,6 +36,7 @@ def app(tickers):
     # ================================================
     # Выбор дат, цели оптимизации и доп аргументов
     # ================================================    
+
     config_container = st.container()
     with config_container:
         # show debug info

@@ -12,12 +12,18 @@ def app(tickers):
     # place imports outside of the function
 
     tickers_selection = st.multiselect('Select NASDAQ tickers for analytics',
-                                       options=tickers, 
-                                       max_selections=4, 
-                                       default=st.session_state['selected_tickers_for_analytics'], 
+                                       options=tickers,
+                                       max_selections=4,
+                                       default=st.session_state['selected_tickers_for_analytics'],
                                        )
+    start_date = st.date_input('Start date',
+                                       dt.date(2000,1,1),
+                                       key='start_date')
+    end_date = st.date_input('End date',
+                                     dt.datetime.now().date(),
+                                     key='end_date')
 
-    
+
     try: # without 'try' there is an error
         start_date = st.session_state['start_date']
         end_date = st.session_state['end_date']
@@ -27,9 +33,9 @@ def app(tickers):
     except:
         # place an error print here
         pass
-    
+
     # try:
-    #     st.write(df.head())    
+    #     st.write(df.head())
     # except:
     #     pass
 
@@ -154,5 +160,3 @@ def app(tickers):
                               title=f'{daily_draw_down.columns[i].replace("Adj Close", "")} max drop-down chart ')
             fig.update_traces(opacity=0.75)
             st.plotly_chart(fig)
-
-
